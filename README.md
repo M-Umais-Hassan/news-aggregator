@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+## Frontend Setup
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Download the project zip file and unzip it or clone the repo
 
-## Available Scripts
+`git clone https://github.com/M-Umais-Hassan/news-aggregator.git`
 
-In the project directory, you can run:
+### Run below command to start project
 
-### `npm start`
+`sudo docker-compose up --build`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Note: Backend was not required but there was cors error while using the newsapi directly in my react app which I thought can be fixed by using some proxy server, and just for that I have build my own server with just straight forward few routes that are using the newapi. I have deployed the backend on following [Link](https://news-aggregator-backend-ten.vercel.app/) but in case you need to look into backend or this deployed site has some issues as vercel often create some problems in their free tier, here are the details for backend. Just replace the URL in docker-compose.yaml.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Backend Setup
 
-### `npm test`
+### Download the project zip file and unzip it or clone the repo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`git clone https://github.com/M-Umais-Hassan/news-aggregator-backend.git`
 
-### `npm run build`
+### Run below command to start project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`sudo docker-compose up --build`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Api key has 100 limit per day, so you can replace the api key in docker-compose.yaml file
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Developer Remarks
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Why did I use only one api instead of using three?** <br />
+   The reason for using only one api was because I have tried using multiple apis but having cors error even using a proxy server and newapi which I am currently using is already using all these sources and this was not a backend specific task so I didn't paid to much attention to the backend side of things. But we can use multiple apis as well scenario will be same.
+2. **Why did I create backend?** <br />
+   Reason for creating backend was due to cors policy error so I have created a proxy server.
+3. **How did I save the preferences of a user?** <br />
+   Used redux persist to persist the feed preferences data which stores data in localstorage. The right way is to give user's ability to login and then will store the preferences in his own account, also we can do it using some ML algorithms based on his past searches and history of interests.
+4. **Why pagination is not applied?** <br />
+   Pagination was not applied and the reason was almost all the famous news websites I have gone through do not have pagination, we can implement pagination api was supporting this and it was not a big deal but I have found news websites mostly based on searches and headlines so pagination was kind of not necessary as per my assumptions.

@@ -1,0 +1,12 @@
+version: "3"
+services:
+  news_aggregator:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_BASE_URL=https://news-aggregator-backend-ten.vercel.app/
+    volumes:
+      - .:/app
+    stdin_open: true
+    tty: true

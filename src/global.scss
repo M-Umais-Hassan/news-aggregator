@@ -1,0 +1,197 @@
+@import "./styles/variables.scss";
+@import "./styles/news.scss";
+@import "./styles/nav.scss";
+@import "./styles/storybook.scss";
+@import "./styles/modal.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jersey+25+Charted&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+code {
+  font-family: $body-font-family;
+}
+
+// reset everything
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0 solid transparent;
+}
+
+// prevent iOS font size change
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+// reset body line-height
+body {
+  min-height: 100vh;
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  font-weight: $body-font-weight;
+  line-height: $body-line-height;
+  color: $body-color;
+  background-color: $body-bg;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba75, 70, 92, 0;
+}
+
+// all media elements set to block and full width
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  max-width: 100%;
+}
+
+// inherit fonts for inputs and buttons
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+// collapse table
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// assign button hover state
+button,
+[role="button"] {
+  cursor: pointer;
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  &:focus {
+    outline: 0;
+  }
+}
+
+// reset anchor style
+a {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+// reset heading style
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+// reset list style
+ol,
+ul {
+  list-style: none;
+}
+
+// reset text input style
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+textarea,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  &:focus {
+    outline: 0;
+  }
+}
+
+// reset firefox placeholder opacity
+::-moz-placeholder {
+  opacity: 1;
+}
+
+// reset textarea style
+textarea {
+  // move the label to the top
+  vertical-align: top;
+
+  // turn off scroll bars in IE unless needed
+  overflow: auto;
+}
+
+// reset checkbox and radio style
+[type="checkbox"],
+[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  &:focus {
+    outline: 0;
+  }
+}
+
+// remove all animations, transitions and smooth scroll for people that prefer not to see them
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.container {
+  margin: 20px;
+  padding-top: 70px;
+  @media (min-width: 768px) {
+    margin: 30px;
+  }
+  @media (min-width: 1024px) {
+    margin: 40px;
+  }
+  @media (min-width: 1440px) {
+    margin: 50px;
+  }
+}
+
+.d__flex__between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

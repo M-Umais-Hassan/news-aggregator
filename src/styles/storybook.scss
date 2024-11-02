@@ -1,0 +1,82 @@
+// -------------- Button -----------------
+
+.sb__button {
+  border-radius: 10px;
+  transition: 0.5s ease;
+  &.sm {
+    padding: 5px 10px;
+  }
+  &.md {
+    padding: 7px 14px;
+  }
+  &.lg {
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+  &.block {
+    padding: 7px 14px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  &.primary {
+    background-color: $primary-color;
+    color: $text-light;
+  }
+  &.primary__outline {
+    color: $primary-color;
+    border: 1px solid $primary-color;
+  }
+  &.light {
+    background-color: $bg-light;
+    color: $primary-color;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// -------------- Button -----------------
+
+// -------------- Input -----------------
+
+.sb__input {
+  position: relative;
+  margin: 10px 0;
+
+  input {
+    transition: 0.5s ease;
+    border: 2px solid $text-light;
+    padding: 10px 5px;
+    border-radius: 10px;
+    font-size: 16px;
+    &:focus {
+      border: 2px solid $primary-color;
+    }
+    &.icon__start {
+      padding-left: 35px;
+    }
+    &.icon__end {
+      padding-right: 35px;
+    }
+    &.border-primary {
+      border: 2px solid $primary-color;
+    }
+  }
+  img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 25px;
+    width: 25px;
+    margin: 0 5px;
+    &.start {
+      left: 0;
+    }
+    &.end {
+      right: 0;
+    }
+  }
+}
+
+// -------------- Input -----------------
